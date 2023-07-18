@@ -16,6 +16,14 @@ from vectorizer import Vectorizer
 from data_reader import read_SICK_data
 from utils import pad_tensor, str2bool
 from siamese import SiameseModel
+from Multihead_attention import MultiHeadAttention
+
+#
+embed_dim = 64
+num_heads = 4
+
+inputs = keras.Input(shape=(100, embed_dim))
+attention_output = MultiHeadAttention(embed_dim, num_heads)(inputs)
 
 
 # read command-line parameters
